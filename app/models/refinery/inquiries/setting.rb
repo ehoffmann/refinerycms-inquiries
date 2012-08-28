@@ -57,6 +57,12 @@ module Refinery
                                         true,
                                         :scoping => "inquiries")
         end
+
+        def sender_email
+          Refinery::Setting.find_or_set(:inquiry_sender_email,
+                                       'sender@domain.com',
+                                       :scoping => 'inquiries')
+        end
       end
     end
   end
